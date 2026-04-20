@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;700&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -43,83 +44,119 @@
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
+  /* Pastel palette */
+  --lavender: #e6d9f0;
+  --rose-blush: #f5d5e8;
+  --mint-pale: #d9f0e8;
+  --slate-purple: #5a4a6b;
+  --slate-light: #8b7a9e;
+  
+  --primary: #7c5ba6;
+  --primary-foreground: #ffffff;
+  --sidebar-primary: #7c5ba6;
+  --sidebar-primary-foreground: #ffffff;
+  --chart-1: #d4a5d4;
+  --chart-2: #a876a8;
+  --chart-3: #7c5ba6;
+  --chart-4: #5a4a6b;
+  --chart-5: #3d2a52;
   --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
+  
+  /* Light mode - pastel gradient background */
+  --background: #faf8fc;
+  --foreground: #2d1f3d;
+  --card: #ffffff;
+  --card-foreground: #2d1f3d;
+  --popover: #ffffff;
+  --popover-foreground: #2d1f3d;
+  --secondary: #d4a5d4;
+  --secondary-foreground: #2d1f3d;
+  --muted: #c9b8d4;
+  --muted-foreground: #6b5a7a;
+  --accent: #f5d5e8;
+  --accent-foreground: #5a4a6b;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #e6d9f0;
+  --input: #ffffff;
+  --ring: #7c5ba6;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #2d1f3d;
+  --sidebar-accent: #f5d5e8;
+  --sidebar-accent-foreground: #5a4a6b;
+  --sidebar-border: #e6d9f0;
+  --sidebar-ring: #7c5ba6;
 }
 
 .dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+  --primary: #a876a8;
+  --primary-foreground: #ffffff;
+  --sidebar-primary: #a876a8;
+  --sidebar-primary-foreground: #ffffff;
+  --background: #1a1520;
+  --foreground: #e8dff0;
+  --card: #2d1f3d;
+  --card-foreground: #e8dff0;
+  --popover: #2d1f3d;
+  --popover-foreground: #e8dff0;
+  --secondary: #7c5ba6;
+  --secondary-foreground: #e8dff0;
+  --muted: #5a4a6b;
+  --muted-foreground: #a89bb0;
+  --accent: #d4a5d4;
+  --accent-foreground: #1a1520;
+  --destructive: #f87171;
+  --destructive-foreground: #1a1520;
+  --border: #3d2a52;
+  --input: #2d1f3d;
+  --ring: #a876a8;
+  --chart-1: #d4a5d4;
+  --chart-2: #a876a8;
+  --chart-3: #7c5ba6;
+  --chart-4: #5a4a6b;
+  --chart-5: #3d2a52;
+  --sidebar: #2d1f3d;
+  --sidebar-foreground: #e8dff0;
+  --sidebar-accent: #7c5ba6;
+  --sidebar-accent-foreground: #e8dff0;
+  --sidebar-border: #3d2a52;
+  --sidebar-ring: #a876a8;
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+  
   body {
-    @apply bg-background text-foreground;
+    @apply bg-gradient-to-br from-[#faf8fc] via-[#f5d5e8] to-[#d9f0e8] text-foreground;
+    background-attachment: fixed;
+    font-family: 'Lato', sans-serif;
   }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    color: var(--slate-purple);
+    font-weight: 600;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  p {
+    @apply text-base md:text-lg leading-relaxed;
+    color: var(--slate-light);
+  }
+  
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
   [type="button"]:not(:disabled),
@@ -134,24 +171,11 @@
 }
 
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
 
@@ -162,16 +186,61 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem; /* 32px - desktop padding */
+      padding-left: 2rem;
       padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
+      max-width: 1280px;
     }
+  }
+
+  /* ChessK Academy custom components */
+  .gradient-text {
+    @apply bg-gradient-to-r from-[#7c5ba6] via-[#a876a8] to-[#d4a5d4] bg-clip-text text-transparent;
+  }
+
+  .corner-bracket {
+    @apply relative;
+  }
+
+  .corner-bracket::before,
+  .corner-bracket::after {
+    content: '';
+    @apply absolute w-6 h-6 border-[1.5px] border-[#7c5ba6] opacity-30;
+  }
+
+  .corner-bracket::before {
+    @apply top-0 left-0 border-t border-l;
+  }
+
+  .corner-bracket::after {
+    @apply bottom-0 right-0 border-b border-r;
+  }
+
+  .divider-line {
+    @apply h-px bg-gradient-to-r from-transparent via-[#7c5ba6] to-transparent opacity-20;
+  }
+
+  .btn-primary {
+    @apply px-8 py-3 rounded-lg bg-gradient-to-r from-[#7c5ba6] to-[#a876a8] text-white font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply px-8 py-3 rounded-lg border-2 border-[#7c5ba6] text-[#7c5ba6] font-semibold hover:bg-[#f5d5e8] transition-all duration-300;
+  }
+
+  .card-elegant {
+    @apply rounded-xl border border-[#e6d9f0] shadow-lg hover:shadow-xl transition-all duration-300;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(4px);
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
   }
 }
