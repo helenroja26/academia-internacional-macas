@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import BrandLogo from '@/components/BrandLogo';
+import { BRAND_NAME } from '@shared/const';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,10 +28,8 @@ export default function Navbar() {
       <div className="container flex items-center justify-between h-20">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#7c5ba6] to-[#a876a8] flex items-center justify-center">
-            <span className="text-white font-bold text-lg">♞</span>
-          </div>
-          <span className="font-serif text-xl font-bold text-[#5a4a6b] hidden sm:inline">ChessK Academy</span>
+          <BrandLogo className="h-12 w-12 rounded-full shadow-sm ring-1 ring-[#e6d9f0]" imageClassName="scale-[1.28]" />
+          <span className="font-serif text-xl font-bold text-[#5a4a6b] hidden sm:inline">{BRAND_NAME}</span>
         </div>
 
         {/* Desktop Navigation */}
@@ -38,7 +38,7 @@ export default function Navbar() {
             <button
               key={link.id}
               onClick={() => scrollToSection(link.id)}
-              className="text-[#8b7a9e] hover:text-[#7c5ba6] transition-colors font-medium"
+              className="text-[#625572] hover:text-[#7c5ba6] transition-colors font-medium"
             >
               {link.label}
             </button>
@@ -76,7 +76,7 @@ export default function Navbar() {
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="text-left text-[#8b7a9e] hover:text-[#7c5ba6] transition-colors font-medium py-2"
+                className="text-left text-[#625572] hover:text-[#7c5ba6] transition-colors font-medium py-2"
               >
                 {link.label}
               </button>

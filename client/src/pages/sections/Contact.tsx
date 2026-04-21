@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Instagram, MessageCircle } from 'lucide-react';
 import { trpc } from '@/lib/trpc';
 import { toast } from 'sonner';
+import { CONTACT_EMAIL, CONTACT_PHONE_DISPLAY, CONTACT_WHATSAPP_URL, FACEBOOK_URL, INSTAGRAM_URL } from '@shared/const';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -33,14 +34,21 @@ export default function Contact() {
 
     setIsSubmitting(true);
     try {
-      await createInquiry.mutateAsync({
+      const result = await createInquiry.mutateAsync({
         parentName: formData.parentName,
         parentEmail: formData.parentEmail,
         studentName: formData.studentName,
         studentAge: parseInt(formData.studentAge),
         message: formData.message,
       });
-      toast.success('¡Gracias por tu interés! Nos pondremos en contacto pronto.');
+      if (result.notificationDelivered) {
+        toast.success('¡Gracias por tu interés! Recibimos tu solicitud y te contactaremos pronto.');
+      } else if (!result.emailConfigured) {
+        toast.error('El formulario se guardó, pero el servidor aún no tiene configurado el correo SMTP. Por ahora contáctanos por WhatsApp o email directo.');
+      } else {
+        toast.error('La solicitud se guardó, pero el correo de notificación no pudo enviarse. Revisa la configuración SMTP o contáctanos por WhatsApp.');
+      }
+
       setFormData({
         parentName: '',
         parentEmail: '',
@@ -56,14 +64,14 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section-padding bg-gradient-to-b from-transparent via-[#d9f0e8] to-transparent">
+    <section id="contact" className="section-padding bg-gradient-to-b from-transparent via-[#e4f0ea] to-transparent">
       <div className="container">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#5a4a6b] mb-4">
             Comienza Tu Viaje en el Ajedrez
           </h2>
           <div className="divider-line w-16 mx-auto mb-6"></div>
-          <p className="text-lg text-[#8b7a9e] max-w-2xl mx-auto">
+          <p className="text-lg text-[#625572] max-w-2xl mx-auto">
             Completa el formulario y nos pondremos en contacto para agendar tu clase de prueba gratuita.
           </p>
         </div>
@@ -80,8 +88,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-serif font-bold text-[#5a4a6b]">Email</h3>
-                  <a href="mailto:info@chesskacademy.com" className="text-[#8b7a9e] hover:text-[#7c5ba6]">
-                    info@chesskacademy.com
+                  <a href={`mailto:${CONTACT_EMAIL}`} className="text-[#625572] hover:text-[#7c5ba6]">
+                    {CONTACT_EMAIL}
                   </a>
                 </div>
               </div>
@@ -96,8 +104,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-serif font-bold text-[#5a4a6b]">WhatsApp</h3>
-                  <a href="https://wa.me/1234567890" className="text-[#8b7a9e] hover:text-[#7c5ba6]">
-                    +1 (234) 567-890
+                  <a href={CONTACT_WHATSAPP_URL} target="_blank" rel="noreferrer" className="text-[#625572] hover:text-[#7c5ba6]">
+                    {CONTACT_PHONE_DISPLAY}
                   </a>
                 </div>
               </div>
@@ -112,7 +120,42 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-serif font-bold text-[#5a4a6b]">Ubicación</h3>
-                  <p className="text-[#8b7a9e]">Clases 100% Online</p>
+                  <p className="text-[#625572]">Clases 100% Online</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="card-elegant p-8">
+              <h3 className="font-serif font-bold text-[#5a4a6b] mb-4">Conecta con nosotros</h3>
+              <div className="grid grid-cols-1 gap-3">
+                <a
+                  href={CONTACT_WHATSAPP_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1f8f62] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#187552]"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  Contactar por WhatsApp
+                </a>
+                <div className="grid grid-cols-2 gap-3">
+                  <a
+                    href={FACEBOOK_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#e6d9f0] bg-white px-4 py-3 text-sm font-semibold text-[#5a4a6b] transition hover:border-[#d2c0e6] hover:bg-[#faf7fd]"
+                  >
+                    <Facebook className="h-4 w-4 text-[#7c5ba6]" />
+                    Facebook
+                  </a>
+                  <a
+                    href={INSTAGRAM_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#e6d9f0] bg-white px-4 py-3 text-sm font-semibold text-[#5a4a6b] transition hover:border-[#d2c0e6] hover:bg-[#faf7fd]"
+                  >
+                    <Instagram className="h-4 w-4 text-[#7c5ba6]" />
+                    Instagram
+                  </a>
                 </div>
               </div>
             </div>
@@ -203,7 +246,7 @@ export default function Contact() {
                 {isSubmitting ? 'Enviando...' : 'Solicitar Clase de Prueba'}
               </button>
 
-              <p className="text-xs text-[#8b7a9e] text-center">
+              <p className="text-xs text-[#625572] text-center">
                 * Campos requeridos. Nos pondremos en contacto en las próximas 24 horas.
               </p>
             </form>

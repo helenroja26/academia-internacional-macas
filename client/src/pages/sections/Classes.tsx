@@ -50,14 +50,14 @@ export default function Classes() {
   ];
 
   return (
-    <section id="classes" className="section-padding bg-gradient-to-b from-transparent via-[#d9f0e8] to-transparent">
+    <section id="classes" className="section-padding bg-gradient-to-b from-transparent via-[#e4f0ea] to-transparent">
       <div className="container">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#5a4a6b] mb-4">
             Nuestros Planes
           </h2>
           <div className="divider-line w-16 mx-auto mb-6"></div>
-          <p className="text-lg text-[#8b7a9e] max-w-2xl mx-auto">
+          <p className="text-lg text-[#625572] max-w-2xl mx-auto">
             Elige el plan que mejor se adapte a tu nivel y objetivos. Todos incluyen acceso a plataforma online y material de estudio.
           </p>
         </div>
@@ -79,11 +79,11 @@ export default function Classes() {
               <h3 className="text-2xl font-serif font-bold text-[#5a4a6b] mb-2">
                 {plan.name}
               </h3>
-              <p className="text-[#8b7a9e] text-sm mb-6">{plan.description}</p>
+              <p className="text-[#625572] text-sm mb-6">{plan.description}</p>
 
               <div className="mb-8">
                 <span className="text-4xl font-bold text-[#7c5ba6]">{plan.price}</span>
-                <span className="text-[#8b7a9e] ml-2">{plan.period}</span>
+                <span className="text-[#625572] ml-2">{plan.period}</span>
               </div>
 
               <button
@@ -100,7 +100,7 @@ export default function Classes() {
                 {plan.features.map((feature, i) => (
                   <div key={i} className="flex gap-3">
                     <Check className="w-5 h-5 text-[#7c5ba6] flex-shrink-0 mt-0.5" />
-                    <span className="text-[#8b7a9e]">{feature}</span>
+                    <span className="text-[#625572]">{feature}</span>
                   </div>
                 ))}
               </div>
@@ -112,7 +112,7 @@ export default function Classes() {
           <h3 className="text-2xl font-serif font-bold text-[#5a4a6b] mb-4">
             ¿Necesitas algo personalizado?
           </h3>
-          <p className="text-[#8b7a9e] mb-6">
+          <p className="text-[#625572] mb-6">
             Ofrecemos planes personalizados para grupos o necesidades especiales. Contáctanos para más información.
           </p>
           <button className="btn-secondary">Solicitar Consulta</button>

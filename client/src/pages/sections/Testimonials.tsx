@@ -29,14 +29,14 @@ export default function Testimonials() {
   ];
 
   return (
-    <section id="testimonials" className="section-padding bg-gradient-to-b from-transparent via-[#d9f0e8] to-transparent">
+    <section id="testimonials" className="section-padding bg-gradient-to-b from-transparent via-[#e4f0ea] to-transparent">
       <div className="container">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#5a4a6b] mb-4">
             Lo que Dicen los Padres
           </h2>
           <div className="divider-line w-16 mx-auto mb-6"></div>
-          <p className="text-lg text-[#8b7a9e] max-w-2xl mx-auto">
+          <p className="text-lg text-[#625572] max-w-2xl mx-auto">
             Conoce las experiencias de familias que confían en ChessK Academy para el desarrollo de sus hijos.
           </p>
         </div>
@@ -58,7 +58,7 @@ export default function Testimonials() {
               </div>
 
               {/* Quote */}
-              <p className="text-[#8b7a9e] mb-6 flex-1 italic">
+              <p className="text-[#625572] mb-6 flex-1 italic">
                 "{testimonial.content}"
               </p>
 
@@ -67,7 +67,7 @@ export default function Testimonials() {
                 <p className="font-serif font-bold text-[#5a4a6b]">
                   {testimonial.name}
                 </p>
-                <p className="text-sm text-[#8b7a9e]">
+                <p className="text-sm text-[#625572]">
                   {testimonial.role}
                 </p>
               </div>
@@ -77,21 +77,21 @@ export default function Testimonials() {
 
         {/* Trust badge */}
         <div className="mt-16 text-center">
-          <p className="text-[#8b7a9e] mb-4">
+          <p className="text-[#625572] mb-4">
             Confían en nosotros más de 100 familias en toda Latinoamérica
           </p>
           <div className="flex justify-center gap-8 flex-wrap">
             <div className="text-center">
               <p className="text-3xl font-bold text-[#7c5ba6]">4.9/5</p>
-              <p className="text-sm text-[#8b7a9e]">Calificación promedio</p>
+              <p className="text-sm text-[#625572]">Calificación promedio</p>
             </div>
             <div className="text-center">
               <p className="text-3xl font-bold text-[#7c5ba6]">100+</p>
-              <p className="text-sm text-[#8b7a9e]">Estudiantes activos</p>
+              <p className="text-sm text-[#625572]">Estudiantes activos</p>
             </div>
             <div className="text-center">
               <p className="text-3xl font-bold text-[#7c5ba6]">98%</p>
-              <p className="text-sm text-[#8b7a9e]">Tasa de retención</p>
+              <p className="text-sm text-[#625572]">Tasa de retención</p>
             </div>
           </div>
         </div>

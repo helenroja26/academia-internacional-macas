@@ -25,14 +25,14 @@ export default function Benefits() {
   ];
 
   return (
-    <section id="benefits" className="section-padding bg-gradient-to-b from-transparent via-[#f5d5e8] to-transparent">
+    <section id="benefits" className="section-padding bg-gradient-to-b from-transparent via-[#f1e3eb] to-transparent">
       <div className="container">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#5a4a6b] mb-4">
             Beneficios del Ajedrez
           </h2>
           <div className="divider-line w-16 mx-auto mb-6"></div>
-          <p className="text-lg text-[#8b7a9e] max-w-2xl mx-auto">
+          <p className="text-lg text-[#625572] max-w-2xl mx-auto">
             El ajedrez no es solo un juego. Es una herramienta poderosa para el desarrollo integral de niños y adolescentes.
           </p>
         </div>
@@ -54,7 +54,7 @@ export default function Benefits() {
                   <h3 className="text-xl font-serif font-bold text-[#5a4a6b] mb-2">
                     {benefit.title}
                   </h3>
-                  <p className="text-[#8b7a9e] leading-relaxed">
+                  <p className="text-[#625572] leading-relaxed">
                     {benefit.description}
                   </p>
                 </div>
@@ -67,15 +67,15 @@ export default function Benefits() {
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-center">
             <div className="text-5xl font-bold text-[#7c5ba6] mb-2">95%</div>
-            <p className="text-[#8b7a9e]">de nuestros estudiantes mejoran su concentración en 3 meses</p>
+            <p className="text-[#625572]">de nuestros estudiantes mejoran su concentración en 3 meses</p>
           </div>
           <div className="text-center">
             <div className="text-5xl font-bold text-[#7c5ba6] mb-2">88%</div>
-            <p className="text-[#8b7a9e]">reportan mejor desempeño académico general</p>
+            <p className="text-[#625572]">reportan mejor desempeño académico general</p>
           </div>
           <div className="text-center">
             <div className="text-5xl font-bold text-[#7c5ba6] mb-2">100%</div>
-            <p className="text-[#8b7a9e]">de padres recomendarían nuestras clases</p>
+            <p className="text-[#625572]">de padres recomendarían nuestras clases</p>
           </div>
         </div>
       </div>

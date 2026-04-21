@@ -40,14 +40,14 @@ export default function FAQ() {
   ];
 
   return (
-    <section id="faq" className="section-padding bg-gradient-to-b from-transparent via-[#f5d5e8] to-transparent">
+    <section id="faq" className="section-padding bg-gradient-to-b from-transparent via-[#f1e3eb] to-transparent">
       <div className="container">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#5a4a6b] mb-4">
             Preguntas Frecuentes
           </h2>
           <div className="divider-line w-16 mx-auto mb-6"></div>
-          <p className="text-lg text-[#8b7a9e] max-w-2xl mx-auto">
+          <p className="text-lg text-[#625572] max-w-2xl mx-auto">
             Resolvemos tus dudas sobre nuestras clases, planes y modalidades de enseñanza.
           </p>
         </div>
@@ -75,7 +75,7 @@ export default function FAQ() {
 
               {openIndex === index && (
                 <div className="px-8 py-6 border-t border-[#e6d9f0]" style={{ background: 'rgba(255, 255, 255, 0.4)' }}>
-                  <p className="text-[#8b7a9e] leading-relaxed">
+                  <p className="text-[#625572] leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>
@@ -86,7 +86,7 @@ export default function FAQ() {
 
         {/* CTA */}
         <div className="mt-16 text-center">
-          <p className="text-[#8b7a9e] mb-6">
+          <p className="text-[#625572] mb-6">
             ¿No encontraste la respuesta que buscas?
           </p>
           <button className="btn-primary">
