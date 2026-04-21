@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight, Facebook, Instagram, MessageCircle } from 'lucide-react';
-import { BRAND_LOGO_PATH, FACEBOOK_URL, INSTAGRAM_URL, CONTACT_WHATSAPP_URL } from '@shared/const';
+import { FACEBOOK_URL, INSTAGRAM_URL, CONTACT_WHATSAPP_URL } from '@shared/const';
 
 export default function Hero() {
   const scrollToSection = (id: string) => {
@@ -115,7 +115,7 @@ export default function Hero() {
               
               <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-[420px] lg:h-[420px] animate-float">
                 <img 
-                  src={BRAND_LOGO_PATH}
+                  src="/logo2.png"
                   alt="ChessK Academy Logo" 
                   className="w-full h-full object-contain drop-shadow-[0_18px_40px_rgba(45,27,77,0.16)]"
                   onError={(e) => {
