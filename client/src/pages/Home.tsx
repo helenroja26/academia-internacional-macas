@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Footer from '@/components/Footer';
+import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 import About from '@/pages/sections/About';
 import Classes from '@/pages/sections/Classes';
 import Benefits from '@/pages/sections/Benefits';
@@ -21,6 +22,7 @@ export default function Home() {
         <FAQ />
         <Contact />
       </main>
+      <FloatingWhatsApp />
       <Footer />
     </div>
   );

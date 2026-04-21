@@ -75,38 +75,10 @@ export default function Hero() {
               >
                 Ver planes
               </button>
-              <a
-                href={CONTACT_WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto px-10 py-4 bg-[#1f8f62] text-white rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-[#187552] transition-all shadow-lg shadow-emerald-200/60"
-              >
-                <MessageCircle className="w-5 h-5" />
-                WhatsApp
-              </a>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mt-6">
-              <a
-                href={FACEBOOK_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/75 px-4 py-2 text-sm font-semibold text-[#5a4a6b] shadow-sm transition hover:border-[#d9c9eb] hover:bg-white"
-              >
-                <Facebook className="h-4 w-4 text-[#7c5ba6]" />
-                Facebook
-              </a>
-              <a
-                href={INSTAGRAM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/75 px-4 py-2 text-sm font-semibold text-[#5a4a6b] shadow-sm transition hover:border-[#d9c9eb] hover:bg-white"
-              >
-                <Instagram className="h-4 w-4 text-[#7c5ba6]" />
-                Instagram
-              </a>
-            </div>
           </div>
+
 
           {/* --- BLOQUE DEL LOGO: TAMAÑO AJUSTADO PARA EVITAR DESBORDE --- */}
           <div className="flex-1 flex justify-center items-center lg:justify-center lg:-ml-2">
@@ -131,11 +103,13 @@ export default function Hero() {
 
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes float {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-12px); }
+          0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+          25% { transform: translate3d(0, -10px, 0) rotate(-1.5deg) scale(1.015); }
+          50% { transform: translate3d(0, -24px, 0) rotate(1.8deg) scale(1.035); }
+          75% { transform: translate3d(0, -12px, 0) rotate(-1deg) scale(1.02); }
         }
         .animate-float {
-          animation: float 5s ease-in-out infinite;
+          animation: float 4.2s ease-in-out infinite;
         }
       `}} />
     </section>

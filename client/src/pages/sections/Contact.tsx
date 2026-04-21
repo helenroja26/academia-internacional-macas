@@ -64,106 +64,135 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section-padding bg-gradient-to-b from-transparent via-[#e4f0ea] to-transparent">
-      <div className="container">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#5a4a6b] mb-4">
-            Comienza Tu Viaje en el Ajedrez
+    <section id="contact" className="section-padding relative overflow-hidden bg-[linear-gradient(180deg,#f2ebf8_0%,#eef6f1_52%,#f7f3fb_100%)]">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute left-[6%] top-16 h-48 w-48 rounded-full bg-[#f5d5e8]/50 blur-[100px]"></div>
+        <div className="absolute right-[8%] top-24 h-64 w-64 rounded-full bg-[#d9f0e8]/55 blur-[110px]"></div>
+        <div className="absolute inset-x-0 top-0 h-36 bg-[radial-gradient(circle_at_top,rgba(124,91,166,0.16),transparent_70%)]"></div>
+      </div>
+
+      <div className="container relative z-10">
+        <div className="mx-auto mb-10 max-w-2xl text-center md:mb-12">
+          <span className="inline-flex items-center rounded-full border border-white/70 bg-white/80 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-[#7c5ba6] shadow-sm">
+            Reserva Tu Clase
+          </span>
+          <h2 className="mt-5 text-4xl font-serif font-bold text-[#4e3d61] md:text-5xl lg:text-[3.35rem]">
+            Da el Primer Paso con una Clase de Prueba
           </h2>
-          <div className="divider-line w-16 mx-auto mb-6"></div>
-          <p className="text-lg text-[#625572] max-w-2xl mx-auto">
-            Completa el formulario y nos pondremos en contacto para agendar tu clase de prueba gratuita.
+          <p className="mx-auto mt-4 max-w-xl text-base md:text-lg text-[#66597a]">
+            Comparte tus datos y te orientaremos con la mejor forma de empezar.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
-          {/* Contact Info */}
-          <div className="space-y-8">
-            <div className="card-elegant p-8">
-              <div className="flex gap-4 mb-4">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-[#f5d5e8]">
-                    <Mail className="h-6 w-6 text-[#7c5ba6]" />
+        <div className="overflow-hidden rounded-[2.25rem] border border-white/70 bg-white/58 shadow-[0_32px_90px_rgba(73,57,96,0.14)] backdrop-blur-xl">
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(22rem,0.95fr)_minmax(0,1.3fr)]">
+            <div className="relative overflow-hidden border-b border-white/40 p-7 md:p-10 lg:border-b-0 lg:border-r lg:border-r-white/40 lg:p-12" style={{ background: 'linear-gradient(155deg, rgba(80,61,103,0.96), rgba(110,84,141,0.92) 54%, rgba(130,177,158,0.72) 100%)' }}>
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.18),transparent_36%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.12),transparent_28%)]"></div>
+
+              <div className="relative z-10">
+                <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-white/70">Reserva inicial</p>
+                <h3 className="mt-4 font-serif text-3xl font-bold leading-tight text-white md:text-[2.1rem]">
+                  Un inicio claro y bien guiado
+                </h3>
+                <p className="mt-4 max-w-sm text-[0.96rem] leading-7 text-white/82">
+                  Cuéntanos lo esencial y te responderemos con una orientación personalizada para el estudiante.
+                </p>
+
+                <div className="mt-8 grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+                  <div className="rounded-2xl border border-white/18 bg-white/10 px-4 py-4 backdrop-blur-sm">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/65">Modalidad</p>
+                    <p className="mt-2 text-sm font-semibold text-white">Clases 100% online</p>
+                  </div>
+                  <div className="rounded-2xl border border-white/18 bg-white/10 px-4 py-4 backdrop-blur-sm">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/65">Respuesta</p>
+                    <p className="mt-2 text-sm font-semibold text-white">En menos de 24 horas</p>
+                  </div>
+                  <div className="rounded-2xl border border-white/18 bg-white/10 px-4 py-4 backdrop-blur-sm">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/65">Enfoque</p>
+                    <p className="mt-2 text-sm font-semibold text-white">Acompañamiento personalizado</p>
                   </div>
                 </div>
-                <div>
-                  <h3 className="font-serif font-bold text-[#5a4a6b]">Email</h3>
-                  <a href={`mailto:${CONTACT_EMAIL}`} className="text-[#625572] hover:text-[#7c5ba6]">
-                    {CONTACT_EMAIL}
-                  </a>
-                </div>
-              </div>
-            </div>
 
-            <div className="card-elegant p-8">
-              <div className="flex gap-4 mb-4">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-[#f5d5e8]">
-                    <Phone className="h-6 w-6 text-[#7c5ba6]" />
+                <div className="mt-8 space-y-4 rounded-[1.6rem] border border-white/16 bg-white/10 p-5 backdrop-blur-sm">
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-2xl bg-white/14">
+                      <Mail className="h-5 w-5 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/65">Email</p>
+                      <a href={`mailto:${CONTACT_EMAIL}`} className="mt-1 block text-base font-semibold text-white hover:text-white/80">
+                        {CONTACT_EMAIL}
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-2xl bg-white/14">
+                      <Phone className="h-5 w-5 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/65">WhatsApp</p>
+                      <a href={CONTACT_WHATSAPP_URL} target="_blank" rel="noreferrer" className="mt-1 block text-base font-semibold text-white hover:text-white/80">
+                        {CONTACT_PHONE_DISPLAY}
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-2xl bg-white/14">
+                      <MapPin className="h-5 w-5 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/65">Ubicación</p>
+                      <p className="mt-1 text-base font-semibold text-white">Clases 100% online</p>
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <h3 className="font-serif font-bold text-[#5a4a6b]">WhatsApp</h3>
-                  <a href={CONTACT_WHATSAPP_URL} target="_blank" rel="noreferrer" className="text-[#625572] hover:text-[#7c5ba6]">
-                    {CONTACT_PHONE_DISPLAY}
-                  </a>
-                </div>
-              </div>
-            </div>
 
-            <div className="card-elegant p-8">
-              <div className="flex gap-4 mb-4">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-[#f5d5e8]">
-                    <MapPin className="h-6 w-6 text-[#7c5ba6]" />
-                  </div>
-                </div>
-                <div>
-                  <h3 className="font-serif font-bold text-[#5a4a6b]">Ubicación</h3>
-                  <p className="text-[#625572]">Clases 100% Online</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="card-elegant p-8">
-              <h3 className="font-serif font-bold text-[#5a4a6b] mb-4">Conecta con nosotros</h3>
-              <div className="grid grid-cols-1 gap-3">
-                <a
-                  href={CONTACT_WHATSAPP_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1f8f62] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#187552]"
-                >
-                  <MessageCircle className="h-4 w-4" />
-                  Contactar por WhatsApp
-                </a>
-                <div className="grid grid-cols-2 gap-3">
+                <div className="mt-7 flex flex-wrap gap-3">
                   <a
-                    href={FACEBOOK_URL}
+                    href={CONTACT_WHATSAPP_URL}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#e6d9f0] bg-white px-4 py-3 text-sm font-semibold text-[#5a4a6b] transition hover:border-[#d2c0e6] hover:bg-[#faf7fd]"
+                    className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-bold text-[#2b8d63] transition hover:bg-[#f3fffa]"
                   >
-                    <Facebook className="h-4 w-4 text-[#7c5ba6]" />
-                    Facebook
+                    <MessageCircle className="h-4 w-4" />
+                    Escríbenos por WhatsApp
                   </a>
-                  <a
-                    href={INSTAGRAM_URL}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#e6d9f0] bg-white px-4 py-3 text-sm font-semibold text-[#5a4a6b] transition hover:border-[#d2c0e6] hover:bg-[#faf7fd]"
-                  >
-                    <Instagram className="h-4 w-4 text-[#7c5ba6]" />
-                    Instagram
-                  </a>
+                  <div className="flex items-center gap-2 text-white/78">
+                    <a
+                      href={FACEBOOK_URL}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="Facebook"
+                      className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 transition hover:bg-white/16"
+                    >
+                      <Facebook className="h-4 w-4" />
+                    </a>
+                    <a
+                      href={INSTAGRAM_URL}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="Instagram"
+                      className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 transition hover:bg-white/16"
+                    >
+                      <Instagram className="h-4 w-4" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Form */}
-          <div className="lg:col-span-2">
-            <form onSubmit={handleSubmit} className="p-8 md:p-12 space-y-6 bg-white rounded-xl border border-[#e6d9f0] shadow-lg" style={{ background: 'rgba(255, 255, 255, 0.8)', backdropFilter: 'blur(8px)' }}>
+            <div className="p-7 md:p-10 lg:p-12">
+              <form onSubmit={handleSubmit} className="space-y-6 rounded-[1.85rem] border border-[#ede3f5] bg-[linear-gradient(180deg,rgba(255,255,255,0.94),rgba(252,249,255,0.98))] p-7 shadow-[0_24px_60px_rgba(90,74,107,0.08)] md:p-10" style={{ backdropFilter: 'blur(8px)' }}>
+                <div className="flex flex-col gap-3 border-b border-[#efe5f6] pb-5 md:flex-row md:items-end md:justify-between">
+                  <div>
+                    <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#7c5ba6]">Formulario de contacto</p>
+                    <h3 className="mt-2 font-serif text-2xl font-bold text-[#4f3f61] md:text-[2rem]">Solicita tu clase de prueba</h3>
+                  </div>
+                  <p className="max-w-xs text-sm text-[#756887] md:text-right">Solo necesitamos unos datos para orientarte mejor.</p>
+                </div>
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-semibold text-[#5a4a6b] mb-2">
@@ -174,8 +203,8 @@ export default function Contact() {
                     name="parentName"
                     value={formData.parentName}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-[#e6d9f0] bg-white focus:outline-none focus:ring-2 focus:ring-[#7c5ba6] text-[#2d1f3d]"
-                    placeholder="Tu nombre completo"
+                    className="w-full rounded-2xl border border-[#e6d9f0] bg-[#fcfbfe] px-4 py-3.5 text-[#2d1f3d] shadow-sm focus:outline-none focus:ring-2 focus:ring-[#7c5ba6]"
+                    placeholder="Nombre completo"
                   />
                 </div>
                 <div>
@@ -187,8 +216,8 @@ export default function Contact() {
                     name="parentEmail"
                     value={formData.parentEmail}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-[#e6d9f0] bg-white focus:outline-none focus:ring-2 focus:ring-[#7c5ba6] text-[#2d1f3d]"
-                    placeholder="tu@email.com"
+                    className="w-full rounded-2xl border border-[#e6d9f0] bg-[#fcfbfe] px-4 py-3.5 text-[#2d1f3d] shadow-sm focus:outline-none focus:ring-2 focus:ring-[#7c5ba6]"
+                    placeholder="correo@ejemplo.com"
                   />
                 </div>
               </div>
@@ -203,7 +232,7 @@ export default function Contact() {
                     name="studentName"
                     value={formData.studentName}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-[#e6d9f0] bg-white focus:outline-none focus:ring-2 focus:ring-[#7c5ba6] text-[#2d1f3d]"
+                    className="w-full rounded-2xl border border-[#e6d9f0] bg-[#fcfbfe] px-4 py-3.5 text-[#2d1f3d] shadow-sm focus:outline-none focus:ring-2 focus:ring-[#7c5ba6]"
                     placeholder="Nombre del estudiante"
                   />
                 </div>
@@ -216,7 +245,7 @@ export default function Contact() {
                     name="studentAge"
                     value={formData.studentAge}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-[#e6d9f0] bg-white focus:outline-none focus:ring-2 focus:ring-[#7c5ba6] text-[#2d1f3d]"
+                    className="w-full rounded-2xl border border-[#e6d9f0] bg-[#fcfbfe] px-4 py-3.5 text-[#2d1f3d] shadow-sm focus:outline-none focus:ring-2 focus:ring-[#7c5ba6]"
                     placeholder="Edad"
                     min="6"
                     max="18"
@@ -226,30 +255,31 @@ export default function Contact() {
 
               <div>
                 <label className="block text-sm font-semibold text-[#5a4a6b] mb-2">
-                  Mensaje (Opcional)
+                  Mensaje opcional
                 </label>
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
-                  className="w-full px-4 py-3 rounded-lg border border-[#e6d9f0] bg-white focus:outline-none focus:ring-2 focus:ring-[#7c5ba6] text-[#2d1f3d]"
-                  placeholder="Cuéntanos sobre tu hijo/a y tus objetivos..."
+                  className="w-full rounded-2xl border border-[#e6d9f0] bg-[#fcfbfe] px-4 py-3.5 text-[#2d1f3d] shadow-sm focus:outline-none focus:ring-2 focus:ring-[#7c5ba6]"
+                  placeholder="Cuéntanos brevemente qué busca el estudiante..."
                 ></textarea>
               </div>
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full rounded-2xl bg-[linear-gradient(135deg,#7c5ba6,#a375b7)] px-8 py-4 text-base font-bold text-white shadow-[0_18px_40px_rgba(124,91,166,0.28)] transition hover:-translate-y-0.5 hover:shadow-[0_22px_48px_rgba(124,91,166,0.34)] disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {isSubmitting ? 'Enviando...' : 'Solicitar Clase de Prueba'}
               </button>
 
-              <p className="text-xs text-[#625572] text-center">
-                * Campos requeridos. Nos pondremos en contacto en las próximas 24 horas.
+              <p className="text-center text-xs text-[#6f6180]">
+                * Campos requeridos. Te responderemos en un plazo estimado de 24 horas.
               </p>
             </form>
+          </div>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Mail, Phone } from 'lucide-react';
+import { Facebook, Instagram, Mail, MessageCircle, Phone } from 'lucide-react';
 import BrandLogo from '@/components/BrandLogo';
 import { BRAND_NAME, CONTACT_EMAIL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF, CONTACT_WHATSAPP_URL, FACEBOOK_URL, INSTAGRAM_URL } from '@shared/const';
 
@@ -18,6 +18,36 @@ export default function Footer() {
             <p className="text-[#625572] text-sm md:text-base">
               Desarrollando mentes brillantes a través del ajedrez online.
             </p>
+
+            <div className="flex flex-wrap gap-3 pt-1">
+              <a
+                href={CONTACT_WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-[#1f8f62] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#187552]"
+              >
+                <MessageCircle className="h-4 w-4" />
+                WhatsApp
+              </a>
+              <a
+                href={FACEBOOK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-[#e6d9f0] bg-white px-4 py-2 text-sm font-semibold text-[#5a4a6b] transition hover:border-[#d2c0e6] hover:bg-[#faf7fd]"
+              >
+                <Facebook className="h-4 w-4 text-[#7c5ba6]" />
+                Facebook
+              </a>
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-[#e6d9f0] bg-white px-4 py-2 text-sm font-semibold text-[#5a4a6b] transition hover:border-[#d2c0e6] hover:bg-[#faf7fd]"
+              >
+                <Instagram className="h-4 w-4 text-[#7c5ba6]" />
+                Instagram
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -89,7 +119,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-[#625572] hover:text-[#7c5ba6] transition-colors"
               >
-                <Phone className="w-4 h-4" />
+                <MessageCircle className="w-4 h-4" />
                 WhatsApp {CONTACT_PHONE_DISPLAY}
               </a>
             </div>
