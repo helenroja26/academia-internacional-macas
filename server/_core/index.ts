@@ -31,6 +31,33 @@ async function findAvailablePort(startPort: number = 3000): Promise<number> {
 async function startServer() {
   const app = express();
   const server = createServer(app);
+
+  app.get("/sitemap.xml", (req, res) => {
+    const host = req.get("host");
+    const baseUrl = `${req.protocol}://${host}`;
+    const now = new Date().toISOString();
+
+    const urls = ["/"];
+    const urlEntries = urls
+      .map(
+        (path) => `
+  <url>
+    <loc>${baseUrl}${path}</loc>
+    <lastmod>${now}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>`
+      )
+      .join("");
+
+    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urlEntries}
+</urlset>`;
+
+    res.setHeader("Content-Type", "application/xml; charset=utf-8");
+    res.status(200).send(sitemap);
+  });
+
   // Configure body parser with larger size limit for file uploads
   app.use(express.json({ limit: "50mb" }));
   app.use(express.urlencoded({ limit: "50mb", extended: true }));
