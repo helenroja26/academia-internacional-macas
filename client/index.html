@@ -3,10 +3,15 @@
 
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/logo2.ico" />
+    <link rel="icon" href="/logo2.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="canonical" href="https://chesskacademy.com/" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="theme-color" content="#121212" />
     <title>ChessK Academy | Clases de ajedrez online para ninos y jovenes</title>
     <meta
       name="description"
@@ -18,18 +23,34 @@
       name="robots"
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://chesskacademy.com/" />
+    <meta property="og:site_name" content="ChessK Academy" />
     <meta property="og:title" content="ChessK Academy | Clases de ajedrez online" />
     <meta
       property="og:description"
       content="Desarrollamos mentes brillantes a traves del ajedrez online con clases guiadas y metodologia practica." />
-    <meta property="og:image" content="/logo1.png" />
+    <meta property="og:image" content="https://chesskacademy.com/og-image.png" />
+    <meta property="og:image:secure_url" content="https://chesskacademy.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="ChessK Academy" />
     <meta property="og:locale" content="es_EC" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="ChessK Academy | Clases de ajedrez online" />
     <meta
       name="twitter:description"
       content="Clases de ajedrez online para ninos y jovenes con enfoque estrategico y acompanamiento cercano." />
-    <meta name="twitter:image" content="/logo1.png" />
+    <meta name="twitter:image" content="https://chesskacademy.com/og-image.png" />
+    <meta name="twitter:image:alt" content="ChessK Academy" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "ChessK Academy",
+        "url": "https://chesskacademy.com",
+        "logo": "https://chesskacademy.com/logo2.png"
+      }
+    </script>
     <!-- THIS IS THE START OF A COMMENT BLOCK, BLOCK TO BE DELETED: Google Fonts here, example:
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,6 +59,10 @@
   </head>
 
   <body>
+    <noscript>
+      ChessK Academy ofrece clases de ajedrez online para ninos y jovenes con
+      enfoque estrategico y acompanamiento personalizado.
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
