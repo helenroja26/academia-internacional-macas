@@ -50,7 +50,7 @@ const programs = [
   },
   {
     number: '03',
-    name: 'Competición',
+    name: 'Avanzado',
     level: 'PREPÁRATE PARA COMPETIR',
     description:
       'Entrena cálculo, preparación y fortaleza mental para sentarte a jugar con confianza.',
@@ -524,7 +524,7 @@ export default function Home() {
 
         <section id="experiencias" className="px-6 py-20 md:py-28">
           <div className="container mx-auto max-w-[1380px] xl:px-12">
-            <div className="overflow-hidden rounded-[30px] bg-[#173c2b] px-6 py-10 shadow-[0_28px_90px_rgba(27,69,44,0.16)] sm:px-10 sm:py-12 lg:px-14 lg:py-14">
+            <div className="academy-dark-panel overflow-hidden rounded-[30px] bg-[#173c2b] px-6 py-10 shadow-[0_28px_90px_rgba(27,69,44,0.16)] sm:px-10 sm:py-12 lg:px-14 lg:py-14">
               <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
                 <div>
                   <div className="mb-5 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#f2c94c]">
