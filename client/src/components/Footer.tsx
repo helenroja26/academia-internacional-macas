@@ -1,145 +1,89 @@
-import { Facebook, Instagram, Mail, MessageCircle, Phone } from 'lucide-react';
-import BrandLogo from '@/components/BrandLogo';
-import { BRAND_NAME, CONTACT_EMAIL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF, CONTACT_WHATSAPP_URL, FACEBOOK_URL, INSTAGRAM_URL } from '@shared/const';
+import { ArrowUpRight, Instagram, Mail, MapPin, MessageCircle } from 'lucide-react';
+import { Link } from 'wouter';
+import {
+  CONTACT_EMAIL,
+  CONTACT_WHATSAPP_URL,
+  FACEBOOK_URL,
+  INSTAGRAM_URL,
+} from '@shared/const';
+
+const footerLinks = [
+  { label: 'Inicio', href: '/' },
+  { label: 'Programas', href: '/programas' },
+  { label: 'Equipo', href: '/equipo' },
+  { label: 'Torneos', href: '/torneos' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Campus virtual', href: '/campus' },
+  { label: 'Contacto', href: '/contacto' },
+];
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="border-t border-[#e6d9f0] mt-20 md:mt-32" style={{ background: 'linear-gradient(to bottom, transparent, rgba(245, 213, 232, 0.5))' }}>
-      <div className="container py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-12">
-          {/* Brand */}
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-2">
-              <BrandLogo className="h-11 w-11 rounded-full shadow-sm ring-1 ring-[#e6d9f0]" imageClassName="scale-[1.28]" />
-              <span className="font-serif text-lg font-bold text-[#5a4a6b]">{BRAND_NAME}</span>
-            </div>
-            <p className="text-[#625572] text-sm md:text-base">
-              Desarrollando mentes brillantes a través del ajedrez online.
+    <footer className="border-t border-[#1d4b32]/[0.08] bg-[#fafbf8]">
+      <div className="container mx-auto max-w-[1380px] px-6 py-12 md:py-16 xl:px-12">
+        <div className="grid gap-10 md:grid-cols-[1.3fr_0.7fr_1fr] md:gap-12">
+          <div className="max-w-sm">
+            <Link href="/" className="inline-flex w-48 items-center">
+              <img
+                src="/logo-academia-macas.png"
+                alt="Academia Internacional Macas"
+                className="h-auto w-full object-contain"
+              />
+            </Link>
+            <p className="mt-5 text-sm leading-6 text-[#5c7463]">
+              Formando campeones dentro y fuera del tablero.
             </p>
-
-            <div className="flex flex-wrap gap-3 pt-1">
-              <a
-                href={CONTACT_WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-[#1f8f62] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#187552]"
-              >
-                <MessageCircle className="h-4 w-4" />
-                WhatsApp
-              </a>
-              <a
-                href={FACEBOOK_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-[#e6d9f0] bg-white px-4 py-2 text-sm font-semibold text-[#5a4a6b] transition hover:border-[#d2c0e6] hover:bg-[#faf7fd]"
-              >
-                <Facebook className="h-4 w-4 text-[#7c5ba6]" />
-                Facebook
-              </a>
-              <a
-                href={INSTAGRAM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-[#e6d9f0] bg-white px-4 py-2 text-sm font-semibold text-[#5a4a6b] transition hover:border-[#d2c0e6] hover:bg-[#faf7fd]"
-              >
-                <Instagram className="h-4 w-4 text-[#7c5ba6]" />
-                Instagram
-              </a>
-            </div>
+            <a
+              href={FACEBOOK_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="mt-5 inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#1d4b32]/10 text-[#526e5b] transition hover:border-[#e1b92f]/40 hover:text-[#1e633c]"
+            >
+              <span className="text-sm font-semibold">f</span>
+            </a>
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="ml-2 inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#1d4b32]/10 text-[#526e5b] transition hover:border-[#e1b92f]/40 hover:text-[#1e633c]"
+            >
+              <Instagram className="h-4 w-4" />
+            </a>
           </div>
 
-          {/* Quick Links */}
           <div>
-            <h4 className="font-serif font-bold text-[#5a4a6b] mb-4">Enlaces Rápidos</h4>
-            <ul className="space-y-2 text-sm md:text-base">
-              <li>
-                <a href="#about" className="text-[#625572] hover:text-[#7c5ba6] transition-colors">
-                  Sobre Nosotros
-                </a>
-              </li>
-              <li>
-                <a href="#classes" className="text-[#625572] hover:text-[#7c5ba6] transition-colors">
-                  Clases
-                </a>
-              </li>
-              <li>
-                <a href="#faq" className="text-[#625572] hover:text-[#7c5ba6] transition-colors">
-                  Preguntas Frecuentes
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="text-[#625572] hover:text-[#7c5ba6] transition-colors">
-                  Contacto
-                </a>
-              </li>
+            <h2 className="mb-4 text-[10px] font-semibold uppercase tracking-[0.19em] text-[#315640]">Explora</h2>
+            <ul className="space-y-3">
+              {footerLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-xs text-[#5c7463] transition hover:text-[#1e633c]">{link.label}</Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div>
-            <h4 className="font-serif font-bold text-[#5a4a6b] mb-4">Contacto</h4>
-            <div className="space-y-3 text-sm md:text-base">
-              <a
-                href={`mailto:${CONTACT_EMAIL}`}
-                className="flex items-center gap-2 text-[#625572] hover:text-[#7c5ba6] transition-colors"
-              >
-                <Mail className="w-4 h-4" />
-                {CONTACT_EMAIL}
+            <h2 className="mb-4 text-[10px] font-semibold uppercase tracking-[0.19em] text-[#315640]">Hablemos de tu próximo movimiento</h2>
+            <div className="space-y-3">
+              <a href={`mailto:${CONTACT_EMAIL}`} className="flex items-center gap-3 text-xs text-[#5c7463] transition hover:text-[#1e633c]">
+                <Mail className="h-3.5 w-3.5 text-[#1e633c]/70" /> {CONTACT_EMAIL}
               </a>
-              <a
-                href={CONTACT_PHONE_HREF}
-                className="flex items-center gap-2 text-[#625572] hover:text-[#7c5ba6] transition-colors"
-              >
-                <Phone className="w-4 h-4" />
-                {CONTACT_PHONE_DISPLAY}
+              <a href={CONTACT_WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-xs text-[#5c7463] transition hover:text-[#1e633c]">
+                <MessageCircle className="h-3.5 w-3.5 text-[#1e633c]/70" /> Escríbenos por WhatsApp
+                <ArrowUpRight className="h-3 w-3" />
               </a>
-              <a
-                href={FACEBOOK_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-[#625572] hover:text-[#7c5ba6] transition-colors"
-              >
-                <Facebook className="w-4 h-4" />
-                Escríbenos por Facebook
-              </a>
-              <a
-                href={INSTAGRAM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-[#625572] hover:text-[#7c5ba6] transition-colors"
-              >
-                <Instagram className="w-4 h-4" />
-                Síguenos en Instagram
-              </a>
-              <a
-                href={CONTACT_WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-[#625572] hover:text-[#7c5ba6] transition-colors"
-              >
-                <MessageCircle className="w-4 h-4" />
-                WhatsApp {CONTACT_PHONE_DISPLAY}
-              </a>
+              <div className="flex items-center gap-3 text-xs text-[#5c7463]">
+                <MapPin className="h-3.5 w-3.5 text-[#1e633c]/70" /> Macas, Ecuador · Formación internacional
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="divider-line mb-8"></div>
-
-        {/* Copyright */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[#625572]">
-          <p>© {currentYear} {BRAND_NAME}. Todos los derechos reservados.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-[#7c5ba6] transition-colors">
-              Política de Privacidad
-            </a>
-            <a href="#" className="hover:text-[#7c5ba6] transition-colors">
-              Términos de Servicio
-            </a>
-          </div>
+        <div className="mt-10 flex flex-col gap-3 border-t border-[#1d4b32]/[0.07] pt-6 text-[10px] text-[#637a69] sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} Academia Internacional Macas. Todos los derechos reservados.</p>
+          <Link href="/" className="inline-flex items-center gap-1.5 transition hover:text-[#395f47]">Volver al inicio <ArrowUpRight className="h-3 w-3" /></Link>
         </div>
       </div>
     </footer>

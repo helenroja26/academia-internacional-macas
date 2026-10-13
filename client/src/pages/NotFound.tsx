@@ -1,48 +1,38 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertCircle, Home } from "lucide-react";
-import { useLocation } from "wouter";
+import { Link } from "wouter";
 
 export default function NotFound() {
-  const [, setLocation] = useLocation();
-
-  const handleGoHome = () => {
-    setLocation("/");
-  };
-
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100">
-      <Card className="w-full max-w-lg mx-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm">
+    <div className="academy-site flex min-h-screen w-full items-center justify-center bg-[#fafbf8]">
+      <Card className="mx-4 w-full max-w-lg border border-[#1d4b32]/10 bg-white shadow-[0_24px_70px_rgba(27,69,44,0.1)]">
         <CardContent className="pt-8 pb-8 text-center">
           <div className="flex justify-center mb-6">
             <div className="relative">
-              <div className="absolute inset-0 bg-red-100 rounded-full animate-pulse" />
-              <AlertCircle className="relative h-16 w-16 text-red-500" />
+              <div className="absolute inset-0 rounded-full bg-[#f2c94c]/20 animate-pulse" />
+              <AlertCircle className="relative h-16 w-16 text-[#1e633c]" />
             </div>
           </div>
 
-          <h1 className="text-4xl font-bold text-slate-900 mb-2">404</h1>
+          <h1 className="mb-2 text-4xl font-bold text-[#173c2b]">404</h1>
 
-          <h2 className="text-xl font-semibold text-slate-700 mb-4">
-            Page Not Found
+          <h2 className="mb-4 text-xl font-semibold text-[#173c2b]">
+            Página no encontrada
           </h2>
 
-          <p className="text-slate-600 mb-8 leading-relaxed">
-            Sorry, the page you are looking for doesn't exist.
+          <p className="mb-8 leading-relaxed text-[#526e5b]">
+            La página que buscas no existe o se ha movido.
             <br />
-            It may have been moved or deleted.
+            Puedes volver al inicio y seguir explorando la academia.
           </p>
 
-          <div
-            id="not-found-button-group"
-            className="flex flex-col sm:flex-row gap-3 justify-center"
-          >
-            <Button
-              onClick={handleGoHome}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
-            >
-              <Home className="w-4 h-4 mr-2" />
-              Go Home
+          <div id="not-found-button-group" className="flex justify-center">
+            <Button asChild className="rounded-full bg-[#1e633c] px-6 text-white transition hover:bg-[#173c2b]">
+              <Link href="/">
+                <Home className="mr-2 h-4 w-4" />
+                Volver al inicio
+              </Link>
             </Button>
           </div>
         </CardContent>
