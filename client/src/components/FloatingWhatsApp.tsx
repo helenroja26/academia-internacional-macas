@@ -17,7 +17,7 @@ export default function FloatingWhatsApp() {
       <span className="flex h-11 w-11 items-center justify-center rounded-full bg-black/[0.08]">
         <MessageCircle className="h-5 w-5 text-[#183c2a]" />
       </span>
-      <span className="hidden sm:inline">WhatsApp</span>
+      <span className="hidden md:inline">WhatsApp</span>
     </a>
   );
 }

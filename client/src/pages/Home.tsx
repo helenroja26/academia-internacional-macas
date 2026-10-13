@@ -108,7 +108,7 @@ const boardPieces = [
 const puzzlePieces: Record<string, string> = {
   h8: '♚',
   h7: '♟',
-  f6: '♔',
+  f5: '♔',
   g6: '♕',
 };
 
@@ -123,38 +123,60 @@ function SectionEyebrow({ children }: { children: ReactNode }) {
 
 function DailyPuzzle() {
   const [selectedSquare, setSelectedSquare] = useState<string | null>(null);
-  const [solved, setSolved] = useState(false);
+  const [stage, setStage] = useState(0);
   const [showHint, setShowHint] = useState(false);
+  const [feedback, setFeedback] = useState<string | null>(null);
 
   function handleSquareClick(square: string) {
-    if (solved) return;
-    if (selectedSquare === 'g6' && square === 'g7') {
-      setSolved(true);
+    if (stage === 2) return;
+
+    const origin = stage === 0 ? 'f5' : 'g6';
+    const destination = stage === 0 ? 'f6' : 'g7';
+
+    if (selectedSquare === origin && square === destination) {
+      setStage((currentStage) => currentStage + 1);
       setSelectedSquare(null);
+      setFeedback(null);
       return;
     }
 
-    setSelectedSquare(square === 'g6' ? square : null);
+    if (square === origin) {
+      setSelectedSquare(square);
+      setFeedback(null);
+      return;
+    }
+
+    setSelectedSquare(null);
+    setFeedback('Esa jugada no fuerza el mate. Prueba otra vez y calcula la respuesta del rival.');
   }
 
   function resetPuzzle() {
     setSelectedSquare(null);
-    setSolved(false);
+    setStage(0);
     setShowHint(false);
+    setFeedback(null);
   }
+
+  const piecesAtStage: Record<string, string>[] = [
+    puzzlePieces,
+    { h8: '♚', h6: '♟', f6: '♔', g6: '♕' },
+    { h8: '♚', h6: '♟', f6: '♔', g7: '♕' },
+  ];
+  const currentPieces = piecesAtStage[stage];
 
   return (
     <section id="ejercicio-del-dia" className="px-6 py-20 md:py-28">
-      <div className="container mx-auto max-w-[1380px] xl:px-12">
-        <div className="grid gap-10 rounded-[30px] border border-[#1d4b32]/10 bg-white p-6 shadow-[0_28px_90px_rgba(27,69,44,0.09)] sm:p-9 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16 lg:p-12">
+      <div className="container mx-auto max-w-[1380px] px-0 sm:px-4 lg:px-8 xl:px-12">
+        <div className="grid grid-cols-1 gap-10 rounded-[30px] border border-[#1d4b32]/10 bg-white p-6 shadow-[0_28px_90px_rgba(27,69,44,0.09)] sm:p-9 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16 lg:p-12">
           <div>
-            <SectionEyebrow>Reto de hoy · Mate en una</SectionEyebrow>
+            <SectionEyebrow>Reto de hoy · Mate en dos</SectionEyebrow>
             <h2 className="max-w-xl text-4xl font-medium leading-tight tracking-tight text-[#173c2b] sm:text-5xl">
-              Encuentra la jugada que lo cambia todo.
+              Encuentra la jugada que prepara el mate.
             </h2>
             <p className="mt-5 max-w-lg text-sm leading-7 text-[#526e5b] md:text-base">
-              Las blancas juegan. Mueve la dama de g6 a g7 para dar jaque mate.
-              Toca primero la dama y después la casilla de destino.
+              Las blancas fuerzan mate en dos. Calcula una jugada de preparación,
+              anticipa la respuesta del rival y encuentra el remate. Toca una
+              pieza y luego su casilla de destino.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <button
@@ -178,36 +200,49 @@ function DailyPuzzle() {
             <div
               aria-live="polite"
               className={`mt-5 min-h-12 rounded-2xl px-4 py-3 text-sm leading-6 ${
-                solved
+                stage === 2
                   ? 'bg-[#edf5e8] text-[#1e633c]'
-                  : 'bg-[#fbf6df] text-[#6c5a22]'
+                  : feedback
+                    ? 'bg-[#fbf0e9] text-[#8a4827]'
+                    : 'bg-[#fbf6df] text-[#6c5a22]'
               }`}
             >
-              {solved
-                ? '¡Correcto! Dama captura en g7: mate. El rey negro no puede escapar.'
-                : showHint
-                  ? 'Pista: busca un movimiento de dama que dé jaque y esté protegido por tu rey.'
-                  : selectedSquare
-                    ? 'Ahora elige la casilla g7.'
-                    : 'Selecciona la dama blanca para comenzar.'}
+              {stage === 2
+                ? '¡Mate en dos! 1. Rf6 h6 2. Dg7#. El rey prepara la casilla de mate.'
+                : feedback ??
+                  (selectedSquare
+                    ? stage === 0
+                      ? 'Ahora mueve el rey a f6.'
+                      : 'Ahora mueve la dama a g7.'
+                    : showHint
+                      ? stage === 0
+                        ? 'Pista: no empieces con jaque. Acerca el rey para proteger la casilla g7.'
+                        : 'Pista: ahora la dama puede dar mate en g7.'
+                      : stage === 0
+                        ? 'Encuentra la jugada tranquila que prepara el mate.'
+                        : 'El peón negro responde en h6. Encuentra el remate con la dama.')}
             </div>
           </div>
 
-          <div className="mx-auto w-full max-w-[500px]">
-            <div className="mb-3 flex items-center justify-between px-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#66806d]">
-              <span>Juegan las blancas</span>
-              <span>♔ Rey · ♕ Dama</span>
+          <div className="mx-auto w-full max-w-[440px]">
+            <div className="mb-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-1 px-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#526e5b]">
+              <span>Juegan las blancas · mate en dos</span>
+              <span>♔ Rey · ♕ Dama · ♟ Peón</span>
             </div>
-            <div className="grid aspect-square grid-cols-8 overflow-hidden rounded-2xl border-4 border-[#173c2b] shadow-[0_18px_50px_rgba(27,69,44,0.2)]">
+            <div
+              role="grid"
+              aria-label="Tablero del ejercicio de mate en dos"
+              className="grid aspect-square w-full min-h-0 min-w-0 grid-cols-8 grid-rows-[repeat(8,minmax(0,1fr))] overflow-hidden rounded-2xl border-4 border-[#173c2b] shadow-[0_18px_50px_rgba(27,69,44,0.2)]"
+            >
               {Array.from({ length: 64 }, (_, index) => {
                 const row = Math.floor(index / 8);
                 const column = index % 8;
                 const file = String.fromCharCode(97 + column);
                 const rank = String(8 - row);
                 const square = `${file}${rank}`;
-                const piece = solved && square === 'g7' ? '♕' : puzzlePieces[square];
+                const piece = currentPieces[square];
                 const isLight = (row + column) % 2 === 0;
-                const isTarget = square === 'g7' && !solved;
+                const isTarget = square === (stage === 0 ? 'f6' : 'g7') && stage !== 2;
                 const isSelected = selectedSquare === square;
 
                 return (
@@ -216,31 +251,42 @@ function DailyPuzzle() {
                     type="button"
                     onClick={() => handleSquareClick(square)}
                     aria-label={`${square}${piece ? `, ${piece === '♕' || piece === '♔' ? 'pieza blanca' : 'pieza negra'}` : ''}${isTarget ? ', destino sugerido' : ''}`}
-                    className={`relative flex items-center justify-center text-[clamp(1.7rem,7vw,3.7rem)] leading-none transition-colors ${
-                      isLight ? 'bg-[#f3e8c6]' : 'bg-[#668b68]'
+                    className={`relative flex h-full w-full min-h-0 min-w-0 items-center justify-center overflow-hidden p-0 text-[clamp(1.7rem,7vw,3.7rem)] leading-none transition-colors focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-inset focus-visible:outline-[#173c2b] ${
+                      isLight ? 'bg-[#f3e8c6]' : 'bg-[#557b5b]'
                     } ${isTarget ? 'ring-4 ring-inset ring-[#f2c94c]' : ''} ${
                       isSelected ? 'bg-[#f2c94c]/80 ring-4 ring-inset ring-[#c79c19]' : ''
-                    } ${solved && square === 'g7' ? 'bg-[#f2c94c]/75' : ''}`}
+                    } ${stage === 2 && square === 'g7' ? 'bg-[#f2c94c]/75' : ''}`}
                   >
+                    {(column === 0 || row === 7) && (
+                      <span
+                        aria-hidden="true"
+                        className={`absolute left-1 top-0.5 z-10 text-[10px] font-bold leading-none ${
+                          isLight ? 'text-[#214a34]' : 'text-[#fffdf5]'
+                        }`}
+                      >
+                        {column === 0 ? rank : ''}
+                        {row === 7 ? file : ''}
+                      </span>
+                    )}
                     {piece && (
                       <span
                         className={
                           piece === '♕' || piece === '♔'
-                            ? 'text-white [text-shadow:0_2px_3px_rgba(0,0,0,0.55)]'
-                            : 'text-[#183c2a] [text-shadow:0_1px_2px_rgba(255,255,255,0.35)]'
+                            ? 'puzzle-piece-white'
+                            : 'puzzle-piece-black'
                         }
                       >
                         {piece}
                       </span>
                     )}
-                    {square === 'g7' && solved && (
+                    {square === 'g7' && stage === 2 && (
                       <Check className="absolute right-1 top-1 h-4 w-4 rounded-full bg-[#1e633c] p-0.5 text-white" />
                     )}
                   </button>
                 );
               })}
             </div>
-            <div className="mt-3 flex justify-between px-1 text-[10px] tracking-[0.16em] text-[#66806d]">
+            <div className="mt-3 flex justify-between px-1 text-[11px] tracking-[0.1em] text-[#526e5b]">
               <span>a · b · c · d · e · f · g · h</span>
               <span>Ejercicio táctico</span>
             </div>
@@ -472,6 +518,78 @@ export default function Home() {
               >
                 Encuentra tu punto de partida <ArrowRight className="h-4 w-4" />
               </Link>
+            </div>
+          </div>
+        </section>
+
+        <section id="experiencias" className="px-6 py-20 md:py-28">
+          <div className="container mx-auto max-w-[1380px] xl:px-12">
+            <div className="overflow-hidden rounded-[30px] bg-[#173c2b] px-6 py-10 shadow-[0_28px_90px_rgba(27,69,44,0.16)] sm:px-10 sm:py-12 lg:px-14 lg:py-14">
+              <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+                <div>
+                  <div className="mb-5 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#f2c94c]">
+                    <span className="h-px w-8 bg-[#f2c94c]/75" />
+                    Mucho más que entrenar
+                  </div>
+                  <h2 className="max-w-xl text-3xl font-medium leading-tight tracking-tight text-[#f7f8f4] sm:text-4xl">
+                    El ajedrez se vive
+                    <span className="font-light italic text-[#f2c94c]"> en comunidad.</span>
+                  </h2>
+                </div>
+                <p className="max-w-xl text-sm leading-7 text-[#e1e9df]/75 lg:justify-self-end">
+                  Comparte el tablero, mide tu progreso y disfruta el camino
+                  junto a otros jugadores de la academia.
+                </p>
+              </div>
+
+              <div className="mt-8 grid gap-4 md:grid-cols-3">
+                <article className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.045] p-5 sm:p-6">
+                  <Crown className="h-5 w-5 text-[#f2c94c]" />
+                  <h3 className="mt-5 text-lg font-medium text-white">Partidas simultáneas</h3>
+                  <p className="mt-2 flex-1 text-sm leading-6 text-[#e1e9df]/70">
+                    Enfréntate a varios tableros y pon a prueba tus ideas en
+                    una experiencia de aprendizaje en vivo.
+                  </p>
+                  <a
+                    href={`${CONTACT_WHATSAPP_URL}?text=${encodeURIComponent('Hola, quisiera conocer las próximas partidas simultáneas de la academia.')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 inline-flex items-center gap-2 text-xs font-semibold text-[#f2c94c] transition hover:gap-3"
+                  >
+                    Consultar próximas fechas <ArrowUpRight className="h-3.5 w-3.5" />
+                  </a>
+                </article>
+
+                <article className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.045] p-5 sm:p-6">
+                  <Trophy className="h-5 w-5 text-[#f2c94c]" />
+                  <h3 className="mt-5 text-lg font-medium text-white">Torneos</h3>
+                  <p className="mt-2 flex-1 text-sm leading-6 text-[#e1e9df]/70">
+                    Lleva lo aprendido a la competencia, gana experiencia y
+                    celebra cada nuevo desafío.
+                  </p>
+                  <Link
+                    href="/torneos"
+                    className="mt-5 inline-flex items-center gap-2 text-xs font-semibold text-[#f2c94c] transition hover:gap-3"
+                  >
+                    Explorar torneos <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                </article>
+
+                <article className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.045] p-5 sm:p-6">
+                  <Users className="h-5 w-5 text-[#f2c94c]" />
+                  <h3 className="mt-5 text-lg font-medium text-white">Comunidad</h3>
+                  <p className="mt-2 flex-1 text-sm leading-6 text-[#e1e9df]/70">
+                    Comparte ideas, conoce a otros apasionados del ajedrez y
+                    crece con el apoyo de la academia.
+                  </p>
+                  <Link
+                    href="/contacto"
+                    className="mt-5 inline-flex items-center gap-2 text-xs font-semibold text-[#f2c94c] transition hover:gap-3"
+                  >
+                    Conoce la academia <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                </article>
+              </div>
             </div>
           </div>
         </section>
