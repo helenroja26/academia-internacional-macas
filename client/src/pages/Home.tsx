@@ -652,7 +652,7 @@ export default function Home() {
                     {[
                       { initials: 'MA', name: 'M.F. Mauro Aucay', title: 'Maestro FIDE' },
                       { initials: 'CG', name: 'M.I. Christopher Garzon', title: 'Maestro Internacional' },
-                      { initials: 'MG', name: 'Michell Gonzalez Fernandez', title: 'Profesora' },
+                      { initials: 'MG', name: 'Michell Gonzalez Fernandez', title: 'Profesor' },
                       { initials: 'HR', name: 'Helen Rojas', title: 'Profesora' },
                       { initials: 'TS', name: 'Tamara Salazar', title: 'Profesora' },
                       { initials: 'EC', name: 'Erik Cuji', title: 'Profesor' },

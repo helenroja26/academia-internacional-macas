@@ -13,7 +13,7 @@ const coaches = [
   },
   {
     name: 'Michell Gonzalez Fernandez',
-    title: 'Profesora',
+    title: 'Profesor',
   },
   {
     name: 'Helen Rojas',
