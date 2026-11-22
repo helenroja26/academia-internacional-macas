@@ -15,6 +15,58 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
+    slug: 'mundial-sub20-caracas-christopher-garzon-alexa-oblitas',
+    category: 'Noticias',
+    title: 'Ecuador presente en el Mundial Sub-20 de Caracas',
+    excerpt:
+      'Christopher Garzón y Alexa Oblitas representan a Ecuador en el Mundial Sub-20 que se desarrolla en Caracas, Venezuela.',
+    readingTime: '2 min de lectura',
+    image: '/mundial sub20.jpeg',
+    imageAlt: 'Participación ecuatoriana en el Mundial Sub-20 de ajedrez',
+    sections: [
+      {
+        heading: 'Una nueva participación internacional',
+        paragraphs: [
+          'El Mundial Sub-20 de ajedrez se realiza en Caracas, Venezuela, y cuenta con la participación de representantes ecuatorianos Christopher Garzón y Alexa Oblitas.',
+          'Su presencia en esta competencia internacional representa una oportunidad para medirse ante ajedrecistas de distintos países y seguir acumulando experiencia en torneos de alto nivel.',
+        ],
+      },
+      {
+        heading: 'Una experiencia para seguir creciendo',
+        paragraphs: [
+          'Los campeonatos mundiales permiten enfrentar desafíos de gran exigencia técnica y deportiva. Cada partida aporta aprendizajes sobre preparación, cálculo, concentración y manejo de la presión.',
+          'Desde la Academia Internacional Macas seguimos de cerca la participación de Christopher Garzón y Alexa Oblitas y celebramos el esfuerzo de quienes llevan el ajedrez ecuatoriano a escenarios internacionales.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'cuarta-parada-circuito-provincial-sucua',
+    category: 'Noticias',
+    title: '108 jugadores participaron en Sucúa en la cuarta parada',
+    excerpt:
+      'El Circuito Provincial de ajedrez llegó a Sucúa con 108 participantes. Macas recibirá la final el 19 de diciembre de 2026.',
+    readingTime: '2 min de lectura',
+    image: '/sucua.jpeg',
+    imageAlt: 'Participantes del circuito provincial de ajedrez en Sucúa',
+    sections: [
+      {
+        heading: 'Una jornada con 108 ajedrecistas',
+        paragraphs: [
+          'El viernes 20 de noviembre de 2026 se realizó en Sucúa la cuarta parada del Circuito Provincial de ajedrez, con la participación de 108 jugadores.',
+          'El encuentro reunió a jugadores de distintos niveles y localidades, fortaleciendo la práctica competitiva y el desarrollo del ajedrez en la provincia.',
+        ],
+      },
+      {
+        heading: 'La final será en Macas',
+        paragraphs: [
+          'La siguiente y última parada del circuito se realizará en Macas el 19 de diciembre de 2026, donde se jugará la final del circuito provincial.',
+          'La convocatoria representa una nueva oportunidad para que los ajedrecistas locales y provinciales cierren la temporada compitiendo ante un público cercano y viviendo una experiencia deportiva significativa.',
+        ],
+      },
+    ],
+  },
+  {
     slug: 'primeros-pasos-ajedrez',
     category: 'Aprendizaje',
     title: 'Tus primeros pasos para aprender ajedrez',

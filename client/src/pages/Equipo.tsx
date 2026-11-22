@@ -12,8 +12,20 @@ const coaches = [
     title: 'Maestro Internacional',
   },
   {
+    name: 'Michell Gonzalez Fernandez',
+    title: 'Profesora',
+  },
+  {
     name: 'Helen Rojas',
-    title: 'Instructora Nacional FIDE',
+    title: 'Profesora',
+  },
+  {
+    name: 'Tamara Salazar',
+    title: 'Profesora',
+  },
+  {
+    name: 'Erik Cuji',
+    title: 'Profesor',
   },
 ];
 

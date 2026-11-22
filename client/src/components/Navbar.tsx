@@ -39,10 +39,10 @@ export default function Navbar() {
         </div>
 
         <Link
-          href="/contacto"
+          href="/inscribirse"
           className="hidden min-h-10 items-center gap-2 rounded-full border border-[#e1b92f]/30 px-4 text-xs font-medium text-[#1e633c] transition hover:border-[#e1b92f]/60 hover:bg-[#f2c94c]/[0.07] md:inline-flex"
         >
-          Reserva una clase <ArrowUpRight className="h-3.5 w-3.5" />
+          Inscríbete <ArrowUpRight className="h-3.5 w-3.5" />
         </Link>
 
         <button
@@ -71,11 +71,11 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
-              href="/contacto"
+              href="/inscribirse"
               onClick={() => setIsOpen(false)}
               className="mt-2 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#f2c94c] px-5 text-sm font-semibold text-[#183c2a]"
             >
-              Reserva una clase gratuita <ArrowUpRight className="h-4 w-4" />
+              Inscríbete en la academia <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
         </div>

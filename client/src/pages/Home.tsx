@@ -341,16 +341,14 @@ export default function Home() {
               </p>
 
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                <a
-                  href={`${CONTACT_WHATSAPP_URL}?text=${encodeURIComponent('Hola, quiero reservar una clase gratuita en la Academia Internacional Macas.')}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/inscribirse"
                   className="group inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-[#f2c94c] px-7 text-sm font-semibold text-[#183c2a] transition hover:-translate-y-0.5 hover:bg-[#f7d965] hover:shadow-[0_12px_40px_rgba(242,201,76,0.25)]"
                 >
-                  <MessageCircle className="h-4 w-4" />
-                  Reserva una clase gratuita
+                  <GraduationCap className="h-4 w-4" />
+                  Inscríbete en la academia
                   <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </a>
+                </Link>
                 <a
                   href="#programas"
                   className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full border border-white/25 px-7 text-sm font-medium text-white transition hover:border-white/50 hover:bg-white/[0.08]"
@@ -654,7 +652,10 @@ export default function Home() {
                     {[
                       { initials: 'MA', name: 'M.F. Mauro Aucay', title: 'Maestro FIDE' },
                       { initials: 'CG', name: 'M.I. Christopher Garzon', title: 'Maestro Internacional' },
-                      { initials: 'HR', name: 'Helen Rojas', title: 'Instructora Nacional FIDE' },
+                      { initials: 'MG', name: 'Michell Gonzalez Fernandez', title: 'Profesora' },
+                      { initials: 'HR', name: 'Helen Rojas', title: 'Profesora' },
+                      { initials: 'TS', name: 'Tamara Salazar', title: 'Profesora' },
+                      { initials: 'EC', name: 'Erik Cuji', title: 'Profesor' },
                     ].map((coach, index) => (
                       <article key={coach.name} className="flex items-center gap-4 py-5">
                         <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#f2c94c]/25 bg-[#f2c94c]/[0.08] font-serif text-sm text-[#f2c94c]">
@@ -882,16 +883,14 @@ export default function Home() {
                 <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-[#526e5b] md:text-base">
                   Cuéntanos qué buscas y te ayudaremos a encontrar el programa ideal para comenzar.
                 </p>
-                <a
-                  href={`${CONTACT_WHATSAPP_URL}?text=${encodeURIComponent('Hola, quiero reservar una clase gratuita en la Academia Internacional Macas.')}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/inscribirse"
                   className="group mt-8 inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-[#f2c94c] px-7 text-sm font-semibold text-[#183c2a] transition hover:-translate-y-0.5 hover:bg-[#f7d965] hover:shadow-[0_12px_40px_rgba(242,201,76,0.25)]"
                 >
-                  <MessageCircle className="h-4 w-4" />
-                  Reserva una clase gratuita
+                  <GraduationCap className="h-4 w-4" />
+                  Completar inscripción
                   <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </a>
+                </Link>
                 <p className="mt-4 text-[10px] tracking-wide text-[#637a69]">Sin compromiso · Atención personalizada</p>
               </div>
             </div>

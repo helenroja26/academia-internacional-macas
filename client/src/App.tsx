@@ -10,6 +10,7 @@ import Campus from "./pages/Campus";
 import Contacto from "./pages/Contacto";
 import Equipo from "./pages/Equipo";
 import Home from "./pages/Home";
+import Inscripcion from "./pages/Inscripcion";
 import Programas from "./pages/Programas";
 import Torneos from "./pages/Torneos";
 
@@ -24,6 +25,7 @@ function Router() {
       <Route path={"/blog/:slug"} component={BlogPost} />
       <Route path={"/blog"} component={Blog} />
       <Route path={"/campus"} component={Campus} />
+      <Route path={"/inscribirse"} component={Inscripcion} />
       <Route path={"/contacto"} component={Contacto} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
