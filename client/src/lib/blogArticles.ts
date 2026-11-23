@@ -10,6 +10,10 @@ export interface BlogArticle {
     heading: string;
     paragraphs: string[];
     points?: string[];
+    links?: {
+      label: string;
+      url: string;
+    }[];
   }[];
 }
 
@@ -17,25 +21,43 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: 'mundial-sub20-caracas-christopher-garzon-alexa-oblitas',
     category: 'Noticias',
-    title: 'Ecuador presente en el Mundial Sub-20 de Caracas',
+    title: 'Christopher Garzón entre los diez mejores del Mundial Sub-20',
     excerpt:
-      'Christopher Garzón y Alexa Oblitas representan a Ecuador en el Mundial Sub-20 que se desarrolla en Caracas, Venezuela.',
+      'Tras cinco rondas en Caracas, Christopher suma dos victorias y tres empates y hoy se mide frente a la India con piezas blancas.',
     readingTime: '2 min de lectura',
-    image: '/mundial sub20.jpeg',
-    imageAlt: 'Participación ecuatoriana en el Mundial Sub-20 de ajedrez',
+    image: '/garzon mundialronda5.jpg',
+    imageAlt: 'Christopher Garzón disputando la quinta ronda del Mundial Sub-20 en Caracas',
     sections: [
       {
-        heading: 'Una nueva participación internacional',
+        heading: 'Excelente desempeño tras cinco rondas',
         paragraphs: [
-          'El Mundial Sub-20 de ajedrez se realiza en Caracas, Venezuela, y cuenta con la participación de representantes ecuatorianos Christopher Garzón y Alexa Oblitas.',
-          'Su presencia en esta competencia internacional representa una oportunidad para medirse ante ajedrecistas de distintos países y seguir acumulando experiencia en torneos de alto nivel.',
+          'Christopher Leonel Garzón Zapatanga ha completado cinco rondas de las 11 pactadas en el Campeonato Mundial Juvenil Sub-20 que se disputa en Caracas, Venezuela.',
+          'Su desempeño incluye dos victorias frente a representantes de Venezuela y Nicaragua, además de tres empates frente a ajedrecistas de Cuba y Colombia, resultados que lo ubican entre los diez primeros del evento.',
         ],
       },
       {
-        heading: 'Una experiencia para seguir creciendo',
+        heading: 'Enfrentamiento de la sexta ronda',
         paragraphs: [
-          'Los campeonatos mundiales permiten enfrentar desafíos de gran exigencia técnica y deportiva. Cada partida aporta aprendizajes sobre preparación, cálculo, concentración y manejo de la presión.',
-          'Desde la Academia Internacional Macas seguimos de cerca la participación de Christopher Garzón y Alexa Oblitas y celebramos el esfuerzo de quienes llevan el ajedrez ecuatoriano a escenarios internacionales.',
+          'Hoy, a las 3:00 p. m. hora local de Caracas, Christopher se medirá frente a un representante de la India conduciendo las piezas blancas.',
+          'Desde la Academia Internacional Macas seguimos de cerca su participación y destacamos el esfuerzo que representa llevar el ajedrez ecuatoriano a uno de los escenarios juveniles más exigentes del mundo.',
+        ],
+        links: [
+          {
+            label: 'Información oficial del Mundial Sub-20',
+            url: 'https://ratings.fide.com/tournament_details.phtml?event=506257',
+          },
+          {
+            label: 'Partidas y programación en Chess.com',
+            url: 'https://www.chess.com/events/info/2026-fide-world-junior-u20-championships',
+          },
+          {
+            label: 'Pareos y emparejamientos',
+            url: 'https://www.chess.com/events/2026-fide-world-junior-u20-championships/games',
+          },
+          {
+            label: 'Resultados y clasificación',
+            url: 'https://www.chess.com/events/2026-fide-world-junior-u20-championships/results',
+          },
         ],
       },
     ],

@@ -53,6 +53,21 @@ export default function BlogPost() {
                     ))}
                   </ul>
                 )}
+                {section.links && (
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    {section.links.map((link) => (
+                      <a
+                        key={link.url}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center rounded-full border border-[#1e633c]/20 bg-white px-4 py-2 text-sm font-semibold text-[#1e633c] transition hover:border-[#1e633c]/40 hover:bg-[#edf2eb]"
+                      >
+                        {link.label} <ArrowRight className="ml-2 h-4 w-4" />
+                      </a>
+                    ))}
+                  </div>
+                )}
               </section>
             ))}
           </div>
