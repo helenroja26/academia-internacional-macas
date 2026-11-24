@@ -3,8 +3,15 @@
   "outputDirectory": "dist/public",
   "rewrites": [
     {
-      "source": "/blog/mundial-sub20-caracas-christopher-garzon-alexa-oblitas",
-      "destination": "/api/blog-meta?slug=mundial-sub20-caracas-christopher-garzon-alexa-oblitas"
+      "source": "/blog/:slug",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(?i)(facebookexternalhit|facebot|whatsapp|twitterbot|linkedinbot|slackbot|discordbot|telegrambot|googlebot|bingbot|pinterestbot)"
+        }
+      ],
+      "destination": "/api/blog-meta?slug=:slug"
     },
     {
       "source": "/(.*)",
